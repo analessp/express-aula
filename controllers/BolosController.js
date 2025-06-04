@@ -6,7 +6,7 @@ class BolosController {
         return res.json(data);
     }
     getById(req, res) {
-        const id = req.params.id; // http://bolosGT.com/(1) => params
+        const id = req.params.id; // http://bolosGT.com/{1} => params
         const data = BolosModels.getById(id);
         return res.json(data);
     }

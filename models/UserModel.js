@@ -1,10 +1,19 @@
 class UserModel {
     static list = [
         {
+            login: 'admin',
+            senha: 'admin123'
+        },
+        {
             login: 'admin2',
             senha: 'admin321'
         }
     ];
+
+    static authenticate (login,senha) {
+        const index = UserModel.list.findIndex(item => item.login === login && item.senha === senha);
+        return UserModel.list[index];
+    }
 
     static read() {
         return UserModel.list;
