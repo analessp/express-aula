@@ -2,9 +2,9 @@ const express = require('express');
 const BolosController = require('../controller/BolosController');
 
 
-const BolosRouter = express.Router();
+const bolosRouter = express.Router();
 
-const bolosController = new BolosController()
+const BolosController = new BolosController()
 
 BolosRouter.get('/bolos', bolosController.read);
 

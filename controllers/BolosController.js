@@ -1,4 +1,4 @@
-const BolosModels = require('../models/BolosMoldes');
+const BolosModels = require('../models/BolosMolds');
 
 class BolosController {
     read(req, res) {
