@@ -7,7 +7,7 @@ const PORT = 3000;
 
 app.use(express.json());
 app.use(BolosRouter);
-app.use(CafeRouter);
+app.use(CafesRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

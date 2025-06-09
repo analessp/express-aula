@@ -1,46 +1,42 @@
-const BolosModels = require('../models/BolosMolds');
+const CafeModel = require('../models/CafesModels');
 
-// class BolosController {
+class CafeController {
+
 //     read(req, res) {
-//         const data = BolosModels.read();
+//         const data = CafesModels.read();
 //         return res.json(data);
 //     }
 //     getById(req, res) {
-//         const id = req.params.id; // http://bolosGT.com/{1} => params
-//         const data = BolosModels.getById(id);
+//         const id = req.params.id;
+//         const data = CafesModels.getById(id);
 //         return res.json(data);
 //     }
 //     create(req, res) {
 //         const body = req.body;
-//         BolosModels.create(body);
+//         CafesModels.create(body);
 //         return res.status(201).json({
-//             nessage: "Bolo cadastrado com sucesso."
+//         message: "Cafe cadastrado com sucesso."
 //         })
-//     }
+//    }
 //     update(req, res) {
-//         const id = req.params.id;
-//         const body = req.body;
-//         BolosModels.update(id, body);
-//         return res.json({
-//             message: "Bolo autalizado com sucesso"
-//         })
+//     const id = req.params.id;
+//     const body = req.body;
+//     CafesModels.update(id, body);
+//     return res.json({
+//       message: "Cafe atualizado com sucesso."
+//       })
 //     }
-//     delete(req, res) {
-//         const id = req.params.id;
-//         BolosModels.delete(id);
-//         return res.json({
-//             message: "Bolo removido com sucesso."
-//         })
+// delete(req, res) {
+//     const id = req.params.id;
+//     CafesModels.delete(id);
+//     return res.json({
+//       message: "Cafe removido com sucesso."
+//       })
 //     }
-// }
 
-// module.exports = BolosController;
-
-class BolosController {
-    
     async read(req, res) {
         try {
-            const data = await BolosModels.read();
+            const data = await CafesModels.read();
             return res.json(data);
         } catch (error) {
             return res.status(500).json({
@@ -53,7 +49,7 @@ class BolosController {
         try {
             const id = req.params.id;
 
-            const data = await BolosModels.getById(id);
+            const data = await CafesModels.getById(id);
             return res.json(data);
         } catch{error} {
             return res.status(500).json({
@@ -66,9 +62,9 @@ async create(req, res) {
     try {
         const body = req.body;
 
-        await BolosModels.create(body);
+        await CafesModels.create(body);
         return res.status(201).json({
-            message: 'Bolo cadastrado com sucesso.'
+            message: 'Café cadastrado com sucesso.'
         });
     } catch (error) {
         return res.statys(500).json({
@@ -82,9 +78,9 @@ async update(req, res) {
         const id = req.params.id;
         const body = req.body;
 
-        await BolosModels.update(id, body);
+        await CafesModels.update(id, body);
         return res.json({
-            message: 'Bolo atualizado com sucesso.'
+            message: 'Café atualizado com sucesso.'
         });
     } catch (error) {
         return res.status(500).json({
@@ -97,9 +93,9 @@ async delete (req, res) {
     try {
         const id = req.params.id;
 
-        await BolosModels.delete(id);
+        await CafesModels.delete(id);
         return res.json({
-            message: 'Bolo removido com sucesso.'
+            message: 'Café removido com sucesso.'
         });
     } catch (error) {
         return res.status(500).json({
@@ -109,4 +105,5 @@ async delete (req, res) {
 }
 }
 
-module.exports = BolosController;
+
+module.exports = CafesController;
